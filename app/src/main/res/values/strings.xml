@@ -1,4 +1,15 @@
 <resources>
     <string name="app_name">SampleTask</string>
     <string name="pleasewait">Please Wait</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="egp">EGP</string>
+    <string name="last_updated_date">updated on</string>
+    <string name="date_mock">02/07/2018</string>
+    <string name="capture_a_photo">capture a photo</string>
+    <string name="hamada_food">Hamada food</string>
+    <string name="hamada_food_description">hamada food description</string>
+    <string name="_50">50</string>
+    <string name="food_image">Food Image</string>
 </resources>
