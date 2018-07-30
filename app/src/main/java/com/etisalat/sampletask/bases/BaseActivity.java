@@ -4,7 +4,6 @@ import android.app.ProgressDialog;
 import android.content.DialogInterface;
 import android.graphics.Color;
 import android.os.Bundle;
-import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
@@ -17,6 +16,7 @@ public abstract class BaseActivity<T extends BasePresenter>
         extends AppCompatActivity implements BasePresenterListener {
     protected T presenter;
     private ProgressDialog progressDialog;
+    protected View view;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -54,11 +54,14 @@ public abstract class BaseActivity<T extends BasePresenter>
         progressDialog.show();
     }
 
-    protected void showSnackbar(String message, @NonNull View parentView) {
-        Snackbar snackbar = Snackbar.make(parentView, message, Snackbar.LENGTH_LONG);
-        View view = snackbar.getView();
-        TextView tv = view.findViewById(android.support.design.R.id.snackbar_text);
-        tv.setTextColor(Color.WHITE);
-        snackbar.show();
+    @Override
+    public void showErrorMessage(String message) {
+        if (view != null) {
+            Snackbar snackbar = Snackbar.make(view, message, Snackbar.LENGTH_LONG);
+            View view = snackbar.getView();
+            TextView tv = view.findViewById(android.support.design.R.id.snackbar_text);
+            tv.setTextColor(Color.WHITE);
+            snackbar.show();
+        }
     }
 }
