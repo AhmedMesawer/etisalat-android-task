@@ -18,6 +18,10 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
+/**
+ * {@link FoodsContract.Controller} subclass
+ * responsible for providing {@link FoodsContract.Presenter} with data from webservice
+ */
 public class FoodsController extends FoodsContract.Controller {
 
     private static final String TAG = FoodsController.class.getSimpleName();
@@ -26,6 +30,11 @@ public class FoodsController extends FoodsContract.Controller {
         super(listener);
     }
 
+    /**
+     * getting list of {@link Food} from webservice when response is success
+     * or error message if it failed and give it back to
+     * {@link FoodsContract.Presenter} listener
+     */
     @Override
     void getFoods() {
         ApiClient.getClient().create(ApiServices.class).getFoodMenu()
@@ -56,6 +65,12 @@ public class FoodsController extends FoodsContract.Controller {
                 });
     }
 
+    /**
+     * sort list of {@link Food} by its name attribute alphabetically
+     *
+     * @param foods list of {@link Food}
+     * @return foods sorted alphabetically
+     */
     public List<Food> sortingFoods(List<Food> foods) {
         Collections.sort(foods, new Comparator<Food>() {
             @Override

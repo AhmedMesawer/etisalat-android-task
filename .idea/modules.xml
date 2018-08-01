@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/SampleTask.iml" filepath="$PROJECT_DIR$/SampleTask.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/etisalat-android-task.iml" filepath="$PROJECT_DIR$/etisalat-android-task.iml" />
     </modules>
   </component>
 </project>

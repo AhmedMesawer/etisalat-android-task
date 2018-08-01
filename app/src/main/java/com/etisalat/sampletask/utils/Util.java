@@ -6,6 +6,10 @@ import android.net.NetworkInfo;
 
 public class Util {
 
+    /**
+     * check whether there is an internet or not
+     * @return true if internet available false otherwise
+     * */
     public static boolean isNetworkAvailable() {
         ConnectivityManager manager = (ConnectivityManager) App.getContext()
                 .getSystemService(Context.CONNECTIVITY_SERVICE);
@@ -21,6 +25,11 @@ public class Util {
         return isAvailable;
     }
 
+    /**
+     * check string is not empty or null
+     * @param s {@link String} object
+     * @return true if s is not an empty or null string false otherwise
+     * */
     public static boolean isNotNullOrEmpty(String s) {
         return s != null && !s.isEmpty();
     }

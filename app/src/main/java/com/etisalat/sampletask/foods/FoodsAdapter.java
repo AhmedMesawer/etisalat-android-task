@@ -14,12 +14,14 @@ import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
-
+/**
+ * {@link RecyclerView.Adapter} subclass adapts data (list of {@link Food}) to view (item_food.xml)
+ * */
 public class FoodsAdapter extends RecyclerView.Adapter<FoodsAdapter.ViewHolder> {
 
     private List<Food> foods;
 
-    public FoodsAdapter(List<Food> foods) {
+    FoodsAdapter(List<Food> foods) {
         this.foods = foods;
     }
 

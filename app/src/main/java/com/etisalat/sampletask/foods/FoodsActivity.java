@@ -5,15 +5,18 @@ import android.os.Bundle;
 import com.etisalat.sampletask.R;
 import com.etisalat.sampletask.bases.BaseActivity;
 
+/**
+ * {@link BaseActivity} subclass
+ * main activity of the app
+ * contains {@link FoodsFragment}
+ */
 public class FoodsActivity extends BaseActivity<FoodsContract.Presenter> {
-
-    private FoodsFragment foodsFragment;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_foods);
-        foodsFragment = new FoodsFragment();
+        FoodsFragment foodsFragment = new FoodsFragment();
         getSupportFragmentManager().beginTransaction().add(R.id.container, foodsFragment).commit();
     }
 
